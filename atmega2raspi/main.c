@@ -146,8 +146,8 @@ init_pins();
    while (1)
      {
 
-     enviar2raspi()1;
-     //enviar2raspi()1;
+     enviar2raspi1();
+     //enviar2raspi2();
 
 }
    return 0;
