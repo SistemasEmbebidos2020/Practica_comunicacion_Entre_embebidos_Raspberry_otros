@@ -12,9 +12,9 @@ try:
   print ("enviado")
   sleep(3)
   try:
-   print ("nosyes")
+   print ("recibiendo datos: ")
    while not( arduino.in_waiting > 0):
-    print ("yesyes")
+    print ("datos recibidos")
     sleep (1.5)
     pass
    mens = arduino.readline().strip()
