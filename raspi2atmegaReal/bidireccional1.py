@@ -17,6 +17,7 @@ try:
     print ("datos recibidos")
     sleep (1.5)
     pass
+   print ()
    mens = arduino.readline().strip()
    print (mens)
   except:
