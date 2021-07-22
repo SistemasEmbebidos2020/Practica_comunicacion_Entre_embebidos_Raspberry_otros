@@ -99,7 +99,7 @@ void recibir_encender_led()
 	if (get_RX_buffer()[0]=='A' && get_RX_buffer()[1]==0)
 	 {
 	 serial_println_str("encendido led1");
-	 PORTB |=  (1<<PB32);
+	 PORTB |=  (1<<PB2);
 	 }
 	 else if (get_RX_buffer()[0]=='B' && get_RX_buffer()[1]==0)
 	 {
