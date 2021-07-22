@@ -47,9 +47,9 @@ def main () :
   mensaje = recibir()
 
   try:
-   if (mensaje)=="1":
+   if int(mensaje)==1:
     GPIO.output(led1,True)
-   elif (mensaje)=="0":
+   elif int(mensaje)==0:
     GPIO.output(led1,False)
    elif int(mensaje)==2:
     GPIO.output(led2,True)
