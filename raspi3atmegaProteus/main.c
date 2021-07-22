@@ -115,7 +115,7 @@ void recibir_encender_led(){
 
 void enviar2raspi1(){
 _delay_ms(1500);
-serial_println_str("1");     //para el segundo c'odigo de python se coloca solo serial_println_str("1,2,3,4");
+serial_println_str("1");     //para el segundo codigo de python se coloca solo serial_println_str("1,2,3,4");
 _delay_ms(1500);
 serial_println_str("2");
 _delay_ms(1500);
