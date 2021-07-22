@@ -92,26 +92,42 @@ bool is_data_ready(){
    return isReady;
 }
 
-void recibir_encender_led(){
- if(is_data_ready()){
-	if (get_RX_buffer()[0]=='A' && get_RX_buffer()[1]==0){
-
-	 serial_println_str("encendido");
-	PORTB |=  (1<<PB3);
-	 }else if (get_RX_buffer()[0]=='B' && get_RX_buffer()[1]==0){
-
-	 serial_println_str("encendido");
-	PORTB |=  (1<<PB2);
-	}else if (get_RX_buffer()[0]=='Z' && get_RX_buffer()[1]==0){
-
-	 serial_println_str("encendido");
-	PORTB &=  ~(1<<PB3);
-	}else if (get_RX_buffer()[0]=='X' && get_RX_buffer()[1]==0){
-
-	 serial_println_str("encendido");
-	PORTB &=  ~(1<<PB2);
-
-}}}
+void recibir_encender_led()
+{
+ if(is_data_ready())
+   {
+	if (get_RX_buffer()[0]=='A' && get_RX_buffer()[1]==0)
+	 {
+	 serial_println_str("encendido led1");
+	 PORTB |=  (1<<PB32);
+	 }
+	 else if (get_RX_buffer()[0]=='B' && get_RX_buffer()[1]==0)
+	 {
+	 serial_println_str("encendido led2");
+	 PORTB |=  (1<<PB3);
+         }
+	 else if (get_RX_buffer()[0]=='C' && get_RX_buffer()[1]==0)
+	 {
+	 serial_println_str("encendido led3");
+	 PORTB |=  (1<<PB4);
+	 }
+	 else if (get_RX_buffer()[0]=='X' && get_RX_buffer()[1]==0)
+	 {
+	 serial_println_str("apagado led1");
+	 PORTB &=  ~(1<<PB2);
+	 }
+	 else if (get_RX_buffer()[0]=='Y' && get_RX_buffer()[1]==0)
+	 {
+	 serial_println_str("apagado led2");
+	 PORTB &=  ~(1<<PB3);
+	 }
+	 else if (get_RX_buffer()[0]=='Z' && get_RX_buffer()[1]==0)
+	 {
+	 serial_println_str("apagado led3");
+	 PORTB &=  ~(1<<PB4);
+         }
+   }
+}
 
 void enviar2raspi1(){
 _delay_ms(1500);
@@ -131,9 +147,9 @@ serial_println_str("1,2,3,4");
 }
 
 void init_pins(){
-DDRB |= ((1 << DDB5)); //asignar a puerto b5 como salida//pin 13 de arduino 
+DDRB |= ((1 << DDB2)); //asignar a puerto b5 como salida//pin 13 de arduino 
 DDRB |= ((1 << DDB3)); //asignar a puerto b3 como salida//pin 11 de arduino 
-DDRB |= ((1 << DDB2)); //asignar a puerto b2 como salida//pin 10 de arduino 
+DDRB |= ((1 << DDB4)); //asignar a puerto b2 como salida//pin 10 de arduino 
 }
 
 char* mensaje = "";
