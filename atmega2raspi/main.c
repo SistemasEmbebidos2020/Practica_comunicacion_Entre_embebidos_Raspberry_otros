@@ -127,7 +127,7 @@ _delay_ms(1500);
 
 void enviar2raspi2(){
 _delay_ms(1500);
-serial_println_str("1,2,3,4");     
+serial_println_str("5,6,7,10");     
 }
 
 void init_pins(){
