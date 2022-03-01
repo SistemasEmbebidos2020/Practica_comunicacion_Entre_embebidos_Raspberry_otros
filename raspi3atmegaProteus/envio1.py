@@ -5,40 +5,11 @@
 
 # Modules
 from time import sleep
-from wiringpi import Serial
 import RPi.GPIO as GPIO
-import ports
-import PrintList
+from eserial import *
 
-baud = 9600
-ser  = Serial("/dev/serial0",baud)
-sleep(0.3)
+baudios(9600)
 
-
-def recibir(echo = True):
- data = ""
- while True:
-  input = ser.getchar()
-  if echo:
-   ser.putchar(input)
-  if input == "\r":
-   return (data)
-  data += input
- sleep(0.2)
-  
-def printsln(menss):
- for c in menss:
-  ser.putchar(c)
-  sleep(0.001)
- ser.putchar("\r")
- sleep(0.001)
-
-
-def prints(menss):
- for c in menss:
-  ser.putchar(c)
-  sleep(0.001)
-  
 # Main function
 def main () :
 # Infinite loop
