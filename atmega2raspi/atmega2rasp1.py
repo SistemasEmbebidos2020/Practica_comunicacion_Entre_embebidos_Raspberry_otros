@@ -3,8 +3,8 @@
 
 # Modules
 from time import sleep
-from wiringpi import Serial
 import RPi.GPIO as GPIO
+from eserial import *
 
 GPIO.setmode(GPIO.BCM) #puede cambiar a BOARD
 global led1
@@ -15,29 +15,7 @@ led2 = 5 #si cambiar de BCM a Board defina el número del pin acorde a los pines
 GPIO.setup(led1, GPIO.OUT)
 GPIO.setup(led2, GPIO.OUT)
 
-baud = 9600
-ser  = Serial("/dev/serial0",baud)
-sleep(0.3)
-
-
-def recibir(echo = True):
- data = ""
- while True:
-  input = ser.getchar()
-  if echo:
-   ser.putchar(input)
-  if input == "\r":
-   return (data)
-  data += input
- sleep(0.2)
-  
-def printsln(menss):
- ser.puts(menss+"\r")
- sleep(0.2)
-
-def prints(menss):
- ser.puts(menss)
- sleep(0.2)
+baudios(9600)
 
 # Main function
 def main () :
