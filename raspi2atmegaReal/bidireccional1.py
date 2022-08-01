@@ -5,7 +5,7 @@ atmega = Serial('/dev/ttyACM0',9600)
 sleep(2)
 try:
  while 1:
-  comando =  raw_input("intro ")
+  comando =  input("intro ")
   atmega.write(comando.encode())
   atmega.write('\r'.encode())
   atmega.flushInput()
@@ -19,7 +19,7 @@ try:
     pass
    print ()
    mens = atmega.readline().strip()
-   print (mens)
+   print (mens.decode())
   except:
    print("no data recive")
 
