@@ -11,9 +11,8 @@ try:
   if atmega.in_waiting > 0:
    mens = atmega.readline().strip()
    sleep(0.3)
-   print (mens)
-  atmega.flushInput()
-  sleep(3)
+   print (mens.decode())
+
 except(KeyboardInterrupt,SystemExit):
  print("")
  print("hasta la vista ")
