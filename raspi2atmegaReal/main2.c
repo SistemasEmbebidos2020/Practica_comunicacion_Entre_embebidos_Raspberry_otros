@@ -94,21 +94,21 @@ bool is_data_ready(){
 
 void recibir_encender_led(){
  if(is_data_ready()){
-	if (get_RX_buffer()[0]=='A' && get_RX_buffer()[1]==0){
+	if (get_RX_buffer()[0]=='A'){
 
-	 serial_println_str("encendido");
+	 serial_println_str("encendido LED1");
 	PORTB |=  (1<<PB3);
-	 }else if (get_RX_buffer()[0]=='B' && get_RX_buffer()[1]==0){
+	 }else if (get_RX_buffer()[0]=='B'){
 
-	 serial_println_str("encendido");
+	 serial_println_str("encendido LED2");
 	PORTB |=  (1<<PB2);
-	}else if (get_RX_buffer()[0]=='Z' && get_RX_buffer()[1]==0){
+	}else if (get_RX_buffer()[0]=='Z' ){
 
-	 serial_println_str("encendido");
+	 serial_println_str("apagado LED1");
 	PORTB &=  ~(1<<PB3);
-	}else if (get_RX_buffer()[0]=='X' && get_RX_buffer()[1]==0){
+	}else if (get_RX_buffer()[0]=='X' ){
 
-	 serial_println_str("encendido");
+	 serial_println_str("apagado LED2");
 	PORTB &=  ~(1<<PB2);
 
 }}}
