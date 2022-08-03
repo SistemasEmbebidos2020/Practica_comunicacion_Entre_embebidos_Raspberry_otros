@@ -17,9 +17,7 @@ void loop()
   lect = "";
   if(Serial.available()>0)    // Si llega un dato por el puerto BT se envía al monitor serial
   {
-    
     lect = Serial.readStringUntil('\r');
-    Serial.println(lect);
   }
   
   
