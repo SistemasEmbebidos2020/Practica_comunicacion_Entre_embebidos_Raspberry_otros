@@ -5,5 +5,6 @@
 - git clone https://github.com/SistemasEmbebidos2020/Practica10.git
 
   
-![raspi2atmega1] (https://raw.githubusercontent.com/SistemasEmbebidos2020/Practica10/main/raspi3atmegaProteus/raspi2atmega.png?raw=true)
-
+# Instalar Serial
+- sudo apt-get install python3-pip
+- sudo pip3 install pyserial
