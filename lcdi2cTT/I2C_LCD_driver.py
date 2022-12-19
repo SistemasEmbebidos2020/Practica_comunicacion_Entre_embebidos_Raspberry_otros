@@ -19,10 +19,13 @@ Made available under GNU GENERAL PUBLIC LICENSE
 I2CBUS = 1
 
 # LCD Address
-ADDRESS = 0x27
+#ADDRESS = 0x27
 
 import smbus
 from time import sleep
+
+def lcd_begin(Address):
+   ADDRESS = Address
 
 class i2c_device:
    def __init__(self, addr, port=I2CBUS):
